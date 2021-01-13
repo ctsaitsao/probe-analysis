@@ -1,4 +1,5 @@
-# ee495-geospatial-vision-and-visualization
-Repo for my assignments from my EE 495: Geospatial Vision and Visualization class.
+# Probe Data Analysis for Road Slope
+### Authors: Christopher Tsai, Anuj Karnik
+Second assignment for EE 495: Geospatial Vision and Visualization, Northwestern University, Spring 2020.
 
-Partner: Anuj Karnik
+## 
