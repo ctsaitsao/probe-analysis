@@ -8,13 +8,16 @@ Given probe data that was collected for several months, do the following in a ma
 - Derive road slope for each road link.
 - Evaluate the derived road slope with the surveyed road slope in the link data file.
 
+## Dependencies
+- Pandas
+- gmaps
+- Haversine
+
 ## Link Matching 
 ### Methodology
 1. Input a probe point of the form [`latitude`, `longitude`].
 2. Create Pandas DataFrame that contains [`linkPVID`, `shapeInfo`, `shapeList`] columns from `Partition6467LinkData.csv`.
-3. Add a column `distFromLink` which contains the distance from the probe point to the nearest link.
-   1. This is done by applying a Lambda function to the entries of the `shapeInfo` column of the DataFrame.
-   2. This Lambda function takes the minimum Great Circle distance (using haversine Python library function) of the probe point to all [`latitude`, `longitude`] pairs from `shapeInfo` column of DataFrame.
+3. Add a column `distFromLink` which contains the distance from the probe point to the nearest link. This is done by applying a Lambda function to the entries of the `shapeInfo` column of the DataFrame. This Lambda function takes the minimum Great Circle distance (using haversine Python library function) of the probe point to all [`latitude`, `longitude`] pairs from `shapeInfo` column of DataFrame.
 4. Identify the link by acquiring the corresponding link’s `linkPVID`.
 5. The output file `Partition6467MatchedPoints.csv` also requires  `distFromLink` — the distance of each probe point to reference node of link. To do this:
    1. Acquire corresponding index of the `linkPVID` in DataFrame.
