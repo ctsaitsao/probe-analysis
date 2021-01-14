@@ -41,6 +41,7 @@ Given probe data that was collected for several months, do the following in a ma
 
 ### Results (sample size = 500)
 ![](results/linked_slopes.PNG)
+![](results/average_error.PNG)
 
 ## Results Discussion
 - From visualizing the probe points and links in gmaps, it is observed that points are matched to corresponding link correctly for the most part.
